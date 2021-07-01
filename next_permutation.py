@@ -29,3 +29,16 @@ def next_bigger(num):
 	return int("".join(left) + mid_char[0] + "".join(right))
 	
 print(next_bigger(99642))
+
+
+# One more solution
+def next_bigger(n):
+    if str(n) == ''.join(sorted(str(n))[::-1]):
+        return -1
+    a = n
+    while True:
+        a += 1
+        if sorted(str(a)) == sorted(str(n)):
+            return a
+
+print(next_bigger(144))
